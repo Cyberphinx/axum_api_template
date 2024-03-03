@@ -1,0 +1,32 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "api"
+path = "src/main.rs"
+
+[dependencies]
+# External dependencies
+async-trait = "0.1.77"
+axum = { version = "0.7.4", features = ["macros"] }
+axum-extra = { version = "0.9.2", features = ["typed-header"] }
+bcrypt = "0.15.0"
+chrono = { version = "0.4.34", features = ["serde"] }
+dotenvy = "0.15.7"
+eyre = "0.6.12"
+itertools = "0.12.1"
+jsonwebtoken = "9.2.0"
+lazy_static = "1.4.0"
+reqwest = { version = "0.11.24",  default-features = false, features = ["json", "rustls-tls-webpki-roots", "multipart"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+sqlx = { version = "0.7.3", features = ["postgres", "runtime-tokio-rustls", "time", "chrono", "uuid"] }
+tokio = { version = "1.36.0", features = ["full"] }
+tower-http = { version = "0.5.2", features = ["limit", "cors", "trace"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+uuid = { version = "1.7.0", features = ["fast-rng", "macro-diagnostics", "v4", "serde"] }
